@@ -24,7 +24,7 @@ Metric_short <- "UkExports"
 #### Import data from web ####
 
 # Set Working directory to place webscraped data files into
-setwd("D:/Coding_Repos/LUDA/Webscraping/Webscraped Inputs") # please note this path will be specific for your local drive
+setwd("D:/Coding_Repos/LUDA-Scripts/Webscraping/Webscraped Inputs") # please note this path will be specific for your local drive
 
 
 # Two types of exports to sum. Goods and services
@@ -110,7 +110,7 @@ scraped_values['Value'] = scraped_values$`Value - goods` + scraped_values$`Value
 scraped_values['Category']=Mission 
 scraped_values['Indicator']=Metric
 scraped_values['Measure']="Pounds"
-scraped_values['Unit']="£ million" # likely a % or £. Be careful.
+scraped_values['Unit']="Â£ million" # likely a % or Â£. Be careful.
 
 
 # No confidence interval or observation status data
@@ -126,7 +126,7 @@ scraped_values <- scraped_values %>%
 # Not always the case (use view(scraped_values) code to check) but may need to add a "Variable Name " column.
 # NORMALLY A COMBINATION OF METRIC AND UNIT. 
 
-scraped_values['Variable Name'] = "Total value of UK exports (£ million)"
+scraped_values['Variable Name'] = "Total value of UK exports (Â£ million)"
 
 scraped_values$AREANM <- gsub(" Cc", " CC", scraped_values$AREANM)
 
@@ -137,7 +137,7 @@ scraped_values$AREANM <- gsub(" Cc", " CC", scraped_values$AREANM)
   # https://geoportal.statistics.gov.uk/datasets/ons::nuts-level-3-january-2018-names-and-codes-in-the-united-kingdom/explore
   # This is different ot all other metrics. 
 
-setwd("D:/Coding_Repos/LUDA/Geoportal codes")
+setwd("D:/Coding_Repos/LUDA-Scripts/Geoportal codes")
 
 area_codes <- read.csv("geoportal_codes_ITL.csv")
 
@@ -204,7 +204,7 @@ csv_output <- unique(csv_output)
 
 # SET WORKING DIRECTORY!! 
 
-setwd("D:/Coding_Repos/LUDA") # please note this path will be specific for your local drive
+setwd("D:/Coding_Repos/LUDA-Scripts") # please note this path will be specific for your local drive
 
 output_folder <- "Output"
 
