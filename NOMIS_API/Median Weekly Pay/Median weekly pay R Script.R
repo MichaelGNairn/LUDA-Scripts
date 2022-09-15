@@ -3,11 +3,11 @@
 # 11th July 2022
 
 # This script should download NOMIS data and adapt it ready for upload to Subnational Indicators Explorer.
-  # Hopefully I will amend so it can work for other APIs
+
 
 ############## SET WORKING DIRECTORY!! 
 
-setwd("D:/Coding_Repos/LUDA")
+setwd("D:/Coding_Repos/LUDA-Scripts")
 
 # remove all data and clear environment
 
@@ -72,7 +72,7 @@ NOMIS_values <- rename(NOMIS_values, AREACD = GEOGRAPHY_CODE,
 # Below code is to load 2021 data
 
 # Set Working directory to place webscraped data files into
-setwd("D:/Coding_Repos/LUDA/Webscraping/Webscraped Inputs") # please note this path will be specific for your local drive
+setwd("D:/Coding_Repos/LUDA-Scripts/Webscraping/Webscraped Inputs") # please note this path will be specific for your local drive
 
 filename_NI <- "ASHE-2021-work-lgd14.xlsx"
 
@@ -108,10 +108,10 @@ MedianWeeklyPay_values <- rbind(scraped_values_NI, NOMIS_values)
 MedianWeeklyPay_values['Category']=Mission 
 MedianWeeklyPay_values['Indicator']=Metric
 MedianWeeklyPay_values['Measure']='Pounds'
-MedianWeeklyPay_values['Unit']='£' # not necessarily a £. be careful.
+MedianWeeklyPay_values['Unit']='Â£' # not necessarily a Â£. be careful.
 
 #below is specific for this metric
-MedianWeeklyPay_values['Variable Name'] = "Median weekly pay (£)"
+MedianWeeklyPay_values['Variable Name'] = "Median weekly pay (Â£)"
 
 
 #### Define the level of geographical granulation - country/region/LA etc. #### 
@@ -256,7 +256,7 @@ csv_output <- anti_join(csv_clean, remove_clean)
 
 #### Export Output files ####
 
-setwd("D:/Coding_Repos/LUDA")
+# e.g. setwd("D:/Coding_Repos/LUDA-Scripts") # please note this path will be specific for your local drive
 
 output_folder <- "Output"
 
