@@ -7,7 +7,7 @@
 
 ############## SET WORKING DIRECTORY!! 
 
-setwd("D:/Coding_Repos/LUDA")
+setwd("D:/Coding_Repos/LUDA-Scripts")
 
 # remove all data and clear environment
 
@@ -29,7 +29,7 @@ Metric_short <- "Under75MortalityRate"
 
 
 # Set Working directory to place webscraped data files into
-setwd("D:/Coding_Repos/LUDA/Webscraping/Webscraped Inputs") # please note this path will be specific for your local drive
+# setwd("D:/Coding_Repos/LUDA-Scripts/Webscraping/Webscraped Inputs") # please note this path will be specific for your local drive
 
 
 Fingertips_data <- "blob:https://fingertips.phe.org.uk/13c46515-af03-45a8-b20c-62789e81ff94"
@@ -153,7 +153,7 @@ csv_output$Value[csv_output$Value == ""] <- "NA"
 
 #### Export Output files ####
 
-setwd("D:/Coding_Repos/LUDA")
+setwd("D:/Coding_Repos/LUDA-Scripts")
 
 output_folder <- "Output"
 
