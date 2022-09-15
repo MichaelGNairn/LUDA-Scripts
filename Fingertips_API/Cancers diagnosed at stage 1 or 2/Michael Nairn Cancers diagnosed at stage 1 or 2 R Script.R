@@ -7,7 +7,7 @@
 
 ############## SET WORKING DIRECTORY!! 
 
-setwd("D:/Coding_Repos/LUDA")
+# e.g. setwd("D:/Coding_Repos/LUDA-Scripts")
 
 # remove all data and clear environment
 
@@ -28,7 +28,7 @@ Metric_short <- "CancerDiagnosis"
 # % of Cancers diagnosed at stage 1 & 2 is code 93671.
 
 # Set Working directory to place webscraped data files into
-setwd("D:/Coding_Repos/LUDA/Webscraping/Webscraped Inputs") # please note this path will be specific for your local drive
+# setwd("D:/Coding_Repos/LUDA-Scripts/Webscraping/Webscraped Inputs") # please note this path will be specific for your local drive
 
 
 Fingertips_data <- "https://fingertips.phe.org.uk/2c978a4c-4012-49fb-8d6c-b9c05c08116f"
@@ -142,7 +142,7 @@ csv_output <- filter(csv_output, Period != "2019")
 
 ############## SET WORKING DIRECTORY!! 
 
-setwd("D:/Coding_Repos/LUDA")
+e.g. setwd("D:/Coding_Repos/LUDA-Scripts") # please note this path will be specific for your local drive
 
 output_folder <- "Output"
 
