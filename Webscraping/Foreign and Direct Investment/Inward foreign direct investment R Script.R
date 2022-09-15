@@ -24,7 +24,7 @@ Metric_short <- "InwardFDI"
 #### Import data from web ####
 
 # Set Working directory to place webscraped data files into
-setwd("D:/Coding_Repos/LUDA/Webscraping/Webscraped Inputs") # please note this path will be specific for your local drive
+setwd("D:/Coding_Repos/LUDA-Scripts/Webscraping/Webscraped Inputs") # please note this path will be specific for your local drive
 
 
 scraped_data <- "https://www.ons.gov.uk/economy/nationalaccounts/balanceofpayments/datasets/foreigndirectinvestmentinvolvingukcompaniesbyukcountryandindustrydirectionalinward"
@@ -112,7 +112,7 @@ rm(list = ls(pattern = "year"))
 scraped_values['Category']=Mission 
 scraped_values['Indicator']=Metric
 scraped_values['Measure']="Pounds"
-scraped_values['Unit']="£ (million)" # likely a % or £. Be careful.
+scraped_values['Unit']="Â£ (million)" # likely a % or Â£. Be careful.
 
 
 # No confidence interval or observation status data
@@ -123,7 +123,7 @@ scraped_values['Observation Status'] =""
 # Not always the case (use view(scraped_values) code to check) but may need to add a "Variable Name " column.
 # NORMALLY A COMBINATION OF METRIC AND UNIT. 
 
-scraped_values['Variable Name'] = "Inward Foreign Direct Investment (£ million)"
+scraped_values['Variable Name'] = "Inward Foreign Direct Investment (Â£ million)"
 
 #### Format AREANM values to title case ####
 
@@ -139,7 +139,7 @@ scraped_clean$AREANM <- gsub(" Combined Authority", "", scraped_clean$AREANM)
 
 #### Import area codes ####
 
-setwd("D:/Coding_Repos/LUDA/Geoportal codes")
+setwd("D:/Coding_Repos/LUDA-Scripts/Geoportal codes")
 
 area_codes <- read.csv("geoportal_codes_ITL.csv")
 
@@ -202,7 +202,7 @@ csv_output$Value[csv_output$Value == ""] <- "NA"
 
 # SET WORKING DIRECTORY!! 
 
-setwd("D:/Coding_Repos/LUDA") # please note this path will be specific for your local drive
+setwd("D:/Coding_Repos/LUDA-Scripts") # please note this path will be specific for your local drive
 
 output_folder <- "Output"
 
