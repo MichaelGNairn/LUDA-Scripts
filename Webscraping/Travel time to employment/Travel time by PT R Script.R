@@ -25,7 +25,7 @@ Metric_short <- "TIMEtravelWORKPT"
 #### Import data from web ####
 
 # Set Working directory to place webscraped data files into
-setwd("D:/Coding_Repos/LUDA/Webscraping/Webscraped Inputs") # please note this path will be specific for your local drive
+setwd("D:/Coding_Repos/LUDA-Scripts/Webscraping/Webscraped Inputs") # please note this path will be specific for your local drive
 
 
 scraped_data <- "https://www.gov.uk/government/statistical-data-sets/journey-time-statistics-data-tables-jts"
@@ -314,7 +314,7 @@ scraped_values <- rbind(England_PT, Region_2019, Region_2017, Region_2016, Regio
 scraped_values['Category']=Mission 
 scraped_values['Indicator']=Metric
 scraped_values['Measure']="Minutes"
-scraped_values['Unit']="Minutes" # likely a % or £. Be careful.
+scraped_values['Unit']="Minutes" # likely a % or Â£. Be careful.
 
 
 # No confidence interval or observation status data
@@ -342,7 +342,7 @@ scraped_clean <- scraped_clean %>%
 
 #### Add in area codes for regions ####
 
-setwd("D:/Coding_Repos/LUDA")
+setwd("D:/Coding_Repos/LUDA-Scripts")
 
 area_codes <- read.csv("region_codes_MN.csv")
 
@@ -416,7 +416,7 @@ csv_output <-  scraped_geographies %>%
 
 # SET WORKING DIRECTORY!! 
 
-setwd("D:/Coding_Repos/LUDA") # please note this path will be specific for your local drive
+setwd("D:/Coding_Repos/LUDA-Scripts") # please note this path will be specific for your local drive
 
 output_folder <- "Output"
 
