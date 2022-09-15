@@ -1,0 +1,34 @@
+Moving files to your local repository (on your laptop) from the online repository using Git Bash.
+
+
+
+
+General advice:
+When starting work ensure to get latest version of all code:
+git pull
+
+
+
+Fetch the most recent version of the repo from Github:
+Use the fetch command and then pull command if "fetch" suggests that your branch is not up to date.
+Performing a pull automatically performs a fetch command first, but use fetch on its own to understand what has changed on the remote repo (if anything):
+git fetch
+
+git pull
+
+
+Check what branch you are in within ONS/digital/LUDA-Scripts:
+Make sure you are on the main branch - you should see (main) in blue at the end of the directory line. 
+If not, use the git branch command to see a list of available branches on your local repo. There will be a green star next to the one you are currently on. 
+git branch 
+
+If you want to access the scripts used for previous iterations (e.g. August 2022) then navigate to that branch.
+git checkout August 2022 Iteration
+August 2022 Iteration should now be in blue at the end of the directory line in Git Bash. 
+Using the git branch command should give you a list of branches, with August 2022 Itertaion havinga green star alongside it.
+
+To switch back to main: 
+git checkout main
+
+
+
