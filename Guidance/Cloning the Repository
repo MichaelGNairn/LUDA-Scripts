@@ -1,27 +1,30 @@
-To edit or create LUDA code, you will need to have this LUDA repository cloned on your computer. 
+To access the scripts on your local device, you will need to clone this repository.
+
 This is essentially a local version of what is on Github. 
-You can navigate between branches, add new files and folders, update files, and push them up to the online Github repository.
-Use either the command line in Git Bash or in Git GUI. 
+
 All instructions in the main body of this document are given for the command line software Git Bash. 
-Git GUI instructions are given at the end of this document.
 
 
 Create a folder in a local drive (I recommend using D:) to store your repositories. I (Michael Nairn) use D:/Coding_Repos.
 
-You should have 2-factor authentication on your Github account. 
+You may need 2-factor authentication on your Github account. 
 This means that you may need to use a Personal access token to get your Git to sync with Github. 
 To get a Personal access token, in Github go to Settings (your settings, not the repository settings) > Developer Settings > Personal Access Tokens. 
 Copy the token and save it. 
 When you are prompted for your password from Git, use this rather than your Github password.
 
 
-Copy the repo to your local drive. You can do this using the command line or Git GUI:
-
 To copy the LUDA repo to your local drive, go to the desired directory (for me this is D:/Coding_Repos), right-click and choose 'Git Bash here'.
 
-Type: git clone https://github.com/ONSdigital/LUDA.git . 
+Type: git clone https://github.com/ONSdigital/LUDA-Scripts.git . 
 A pop-up will appear. 
 The ‘password’ it asks for is the personal access token that you created above.
 
 Once you have cloned the repository, in order to access the main branch you need to navigate to the cloned folder that will now appear in your coding_repos. 
-Use cd LUDA. You should now see (main) in blue colour at the end of the directory line.
+Use cd LUDA-Scripts. You should now see (main) in blue colour at the end of the directory line.
+
+To ensure you have the most up to date version of the scripts on your local device you will need to pull any changes from the repository:
+When in LUDA-Scripts (main) in Git Bash type the following:
+git pull
+
+This will pull any changes to the scripts onto your local device. 
