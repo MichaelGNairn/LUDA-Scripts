@@ -3,11 +3,11 @@
 # 25th July 2022
 
 # This script should download Fingertips data and adapt it ready for upload to Subnational Indicators Explorer.
-# Hopefully I will amend so it can work for other APIs
+
 
 ############## SET WORKING DIRECTORY!! 
 
-setwd("D:/Coding_Repos/LUDA")
+setwd("D:/Coding_Repos/LUDA-Scripts")
 
 # remove all data and clear environment
 
@@ -32,7 +32,7 @@ Metric_short <- "Overweight_year6"
 # Percentage of adults (aged 18+) classified as overweight or obese code is 93088.
 
 # Set Working directory to place webscraped data files into
-setwd("D:/Coding_Repos/LUDA/Webscraping/Webscraped Inputs") # please note this path will be specific for your local drive
+# setwd("D:/Coding_Repos/LUDA-Scripts/Webscraping/Webscraped Inputs") # please note this path will be specific for your local drive
 
 
 Fingertips_data <- "https://fingertips.phe.org.uk/b01736ff-6371-4c2c-b0cf-00cf07a41902"
@@ -58,7 +58,7 @@ Fingertips_values <- filter(Fingertips_data, Sex == "Persons" & Category == "" &
 Fingertips_values['Category']=Mission 
 Fingertips_values['Indicator']=Metric
 Fingertips_values['Measure']="Percentage"
-Fingertips_values['Unit']="%" # likely a % or £. Be careful.
+Fingertips_values['Unit']="%" # likely a % or Â£. Be careful.
 
 
 # Not always the case (use view(Fingertips_values) code to check) but may need to add a "Variable Name " column.
@@ -145,7 +145,7 @@ csv_output <- filter(csv_formatted, Period != "202021")
 
 # SET WORKING DIRECTORY!! 
 
-setwd("D:/Coding_Repos/LUDA") # please note this path will be specific for your local drive
+e.g. setwd("D:/Coding_Repos/LUDA-Scripts") # please note this path will be specific for your local drive
 
 output_folder <- "Output"
 
