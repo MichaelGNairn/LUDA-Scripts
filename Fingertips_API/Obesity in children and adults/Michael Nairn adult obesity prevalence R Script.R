@@ -7,7 +7,7 @@
 
 ############## SET WORKING DIRECTORY!! 
 
-setwd("D:/Coding_Repos/LUDA")
+setwd("D:/Coding_Repos/LUDA-Scripts")
 
 # remove all data and clear environment
 
@@ -31,7 +31,7 @@ Metric_short <- "Overweight_adult"
 
 
 # Set Working directory to place webscraped data files into
-setwd("D:/Coding_Repos/LUDA/Webscraping/Webscraped Inputs") # please note this path will be specific for your local drive
+setwd("D:/Coding_Repos/LUDA-Scripts/Webscraping/Webscraped Inputs") # please note this path will be specific for your local drive
 
 
 Fingertips_data <- "https://fingertips.phe.org.uk/c98ebff3-788b-44cb-9fd9-485e40c32d4f"
@@ -57,7 +57,7 @@ Fingertips_values <- filter(Fingertips_data, Sex == "Persons" & Age == "18+ yrs"
 Fingertips_values['Category']=Mission 
 Fingertips_values['Indicator']=Metric
 Fingertips_values['Measure']="Percentage"
-Fingertips_values['Unit']="%" # likely a % or £. Be careful.
+Fingertips_values['Unit']="%" # likely a % or Â£. Be careful.
 
 
 # Not always the case (use view(Fingertips_values) code to check) but may need to add a "Variable Name " column.
@@ -134,7 +134,7 @@ csv_output <- rename(Fingertips_clean, AREACD = Area.Code,
 
 # SET WORKING DIRECTORY!! 
 
-setwd("D:/Coding_Repos/LUDA") # please note this path will be specific for your local drive
+e.g. setwd("D:/Coding_Repos/LUDA-Scripts") # please note this path will be specific for your local drive
 
 output_folder <- "Output"
 
