@@ -23,7 +23,7 @@ Metric_short <- "EarlyYearsFoundationMaths"
 #### Import data from web ####
 
 # Set Working directory to place webscraped data files into
-setwd("D:/Coding_Repos/LUDA/Webscraping/Webscraped Inputs") # please note this path will be specific for your local drive
+# setwd("D:/Coding_Repos/LUDA-Scripts/Webscraping/Webscraped Inputs") # please note this path will be specific for your local drive
 
 
 scraped_data <- "https://www.gov.uk/government/statistics/early-years-foundation-stage-profile-results-2018-to-2019"
@@ -59,7 +59,7 @@ scraped_values <-  scraped_data %>%
 scraped_values['Category']=Mission 
 scraped_values['Indicator']=Metric
 scraped_values['Measure']="Percetage"
-scraped_values['Unit']="%" # likely a % or £. Be careful.
+scraped_values['Unit']="%" # likely a % or Â£. Be careful.
 
 
 # No confidence interval or observation status data
@@ -143,7 +143,7 @@ csv_output <- scraped_clean  %>%
 
 # SET WORKING DIRECTORY!! 
 
-setwd("D:/Coding_Repos/LUDA") # please note this path will be specific for your local drive
+# e.g. setwd("D:/Coding_Repos/LUDA-Scripts") # please note this path will be specific for your local drive
 
 output_folder <- "Output"
 
