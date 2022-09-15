@@ -7,7 +7,7 @@
 
 ############## SET WORKING DIRECTORY!! 
 
-setwd("D:/Coding_Repos/LUDA")
+setwd("D:/Coding_Repos/LUDA-Scripts")
 
 # remove all data and clear environment
 
@@ -55,7 +55,7 @@ NOMIS_values['Confidence Interval'] = case_when(NOMIS_values$MEASURES_NAME == "C
 NOMIS_values['Category']=Mission 
 NOMIS_values['Indicator']=Metric
 NOMIS_values['Measure']="Pounds"
-NOMIS_values['Unit']='£' # not necessarily a £. be careful.
+NOMIS_values['Unit']='Â£' # not necessarily a Â£. be careful.
 
 
 #### Define the level of geographical granulation - country/region/LA etc. #### 
