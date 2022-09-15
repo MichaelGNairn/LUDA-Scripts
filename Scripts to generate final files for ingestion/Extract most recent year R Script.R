@@ -13,7 +13,7 @@ rm(list = ls())
 
 #### Import all csv data files #### 
 
-setwd("D:/Coding_Repos/LUDA/Output")
+setwd("D:/Coding_Repos/LUDA-Scripts/Output")
 
 
 data_files <- list.files(pattern="*.csv")
@@ -44,7 +44,7 @@ data_file_list_clean = lapply(data_file_list_recent, arrangeRows)
 
 #### Set up working directory structure for output ####
 
-setwd("D:/Coding_Repos/LUDA/Output/Most Recent Year Output")
+setwd("D:/Coding_Repos/LUDA-Scripts/Output/Most Recent Year Output")
 
 
 #### Export all most recent csv files ####
