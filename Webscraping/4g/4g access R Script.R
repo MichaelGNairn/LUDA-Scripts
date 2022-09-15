@@ -23,7 +23,7 @@ Metric_short <- "4GAreaCoverage"
 #### Import data from web ####
 
 # Set Working directory to place webscraped data files into
-setwd("D:/Coding_Repos/LUDA/Webscraping/Webscraped Inputs") # please note this path will be specific for your local drive
+setwd("D:/Coding_Repos/LUDA-Scripts/Webscraping/Webscraped Inputs") # please note this path will be specific for your local drive
 
 
 scraped_data <- "https://www.ofcom.org.uk/research-and-data/multi-sector-research/infrastructure-research/connected-nations-update-summer-2021"
@@ -54,7 +54,7 @@ scraped_values <-  scraped_data %>%
 scraped_values['Category']=Mission 
 scraped_values['Indicator']=Metric
 scraped_values['Measure']="Percentage"
-scraped_values['Unit']="%" # likely a % or £. Be careful.
+scraped_values['Unit']="%" # likely a % or Â£. Be careful.
 scraped_values['Period']="2021"
 
 # No confidence interval or observation status data
@@ -139,7 +139,7 @@ csv_output <- csv_formatted  %>%
 
 # SET WORKING DIRECTORY!! 
 
-setwd("D:/Coding_Repos/LUDA") # please note this path will be specific for your local drive
+# e.g. setwd("D:/Coding_Repos/LUDA-Scripts") # please note this path will be specific for your local drive
 
 output_folder <- "Output"
 
