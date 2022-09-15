@@ -1,0 +1,24 @@
+LUDA Folder Structure.
+
+Each data provider for the Subnational Indicators Explorer has its own folder (e.g. NOMIS_API, Fingertips_API, Webscraping).
+
+Within each of these folders (e.g. NOMIS API) there will be a subfolder for each metric sourced from this data provider. 
+
+These contain an R script for generating a csv file from the API link or .csv file called within it. Please ensure the .csv file is the most up-to-date dataset. This may have changed since the previous iteration. 
+Prior to running the script ensure you are in the correct working directory for you: 
+  E.g. In the script it calls "D:\Coding_Repos\LUDA\Output". The "D:\Coding_Repos" part will be different dependent upon your local file structure.
+  
+Running the script will generate a .csv file in the "Output" folder.
+
+
+To generate .csv files containing only the most recent period of data, as required for the jitter plot, run the "Michael Nairn extract most recent year R Script.R" script in the "Scripts to generate final files for ingestion" folder.
+
+
+Once all outputs are ready, both .csv data files and .xlsx metadata files, run the required script for your .xlsx file. These are in "Scripts to generate final files for ingestion". 
+"Michael Nairn Writing file for jitter plot R Script.R" 
+"Michael Nairn Writing machine_readable R Script.R"
+"Michael Nairn Writing human readable R Script.R"
+
+  This will generate the relevant excel file for publication or ingestion in the "Final Output" folder.
+
+

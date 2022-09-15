@@ -1,0 +1,25 @@
+LUDA Metric Scripts
+Each metric for the Subnational Indicator Explorer (SIE) has an R script that imports the relevant dataset, manipulates it into the required format, and exports it as a .csv file.
+
+Scripts can be found within the folder fo the relevant data provider (e.g. NOMIS_API, Fingertips_API, Webscraping), within which there will be a subfolder for each metric (e.g. employment rate) sourced from this data provider. 
+
+Prior to running the script ensure you set up your desired working directory for your output .csv file: 
+  I.e. In the script where there is a comment saying "# set up working directory for output" replace this with your desired working directory. For example "D://My_Directory/LUDA/Output_Data".
+
+Prior to running the script ensure you have the correct source data available. Follow the instructions under the "Import data" subheading.Again ensure you have set up the required working directory for dataframe import.
+
+
+Do not blindly run these scripts to generate output. 
+
+Some alterations since the last iteration may be required. Below is a non-exhaustive list of possible alterations to check for each metric:
+Please ensure the .csv file is the most up-to-date dataset. This may have changed since the previous iteration.
+If a new dataset, esnure the format is the same as the previous release. If so, the Script should manipulate the data file in the same way.
+Ensure NOMIS APIs are up to date, and you are signed in.
+Ensure the "Geoportal codes" subfolder has up to date information from https://geoportal.statistics.gov.uk/ .
+
+
+Any new metrics will need new scripts, as with previously reported metrics. 
+
+
+  
+

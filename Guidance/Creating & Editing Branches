@@ -1,0 +1,79 @@
+Moving files between your local repository (on your laptop) and the online repository using Git Bash.
+
+
+
+
+General advice:
+When starting work ensure to get latest version of all code and data:
+git pull
+
+Make regular commits to Github.
+This means others can pick up your changes, and you can roll back to an earlier version if it all starts to go pear-shaped.
+
+Use git status to check if you have any unstaged or uncommitted changes. Unstaged files with changes will be listed in red.
+git status
+
+
+
+? May be best to have a separate branch for each metric. ?  
+
+Fetch the most recent version of the repo from Github:
+Use the fetch command and then pull command if "fetch" suggests that your branch is not up to date.
+Performing a pull automatically performs a fetch command first, but use fetch on its own to understand what has changed on the remote repo (if anything):
+git fetch
+
+git pull
+
+
+Check what branch you are in within ONS/digital/LUDA:
+Make sure you are on the main branch - you should see (main) in blue at the end of the directory line. 
+If not, use the git branch command to see a list of available branches on your local repo. There will be a green star next to the one you are currently on. 
+git branch 
+
+Switch to main: 
+git checkout main
+
+
+Create a new branch with a suitable name:
+git checkout -b "NAME OF BRANCH" 
+
+The -b suffix means you're creating a new branch and the checkout command automatically puts you on it after its creation. 
+
+
+
+Delete a branch:
+Use the git branch -d command. Sometimes, you may need a capital D. Be certain though as it will delete the branch completely.
+git branch -d "NAME OF BRANCH" 
+
+
+Create a new folder for the metric:
+Use the metric name "NAME OF BRANCH" as the folder name. 
+If the source data needs to be downloaded manually (i.e. not an API), create a folder called 'Input' and save the data in this folder. 
+Note that this will NOT be uploaded to Github. 
+
+
+Commiting files to remote repository - ONSdigital/LUDA:
+Add files for staging (tracking) so that the commit only includes these files. 
+To stage all new files for tracking (recommended).
+
+git add . 
+
+The full stop means "everything". 
+
+
+Add a short and informative message when commiting tracked files:
+git commit -m "Adding information on Git Bash to Contributing instructions"
+
+
+Push the committed changes to update the remote repo on GitHub for the respective branch:
+git push -u origin "NAME OF BRANCH"
+
+You can just use git push from now on, when you are on the same branch locally (but always following git add . and git commit -m "message" first):
+git add .
+git commit - m "message"
+git push "NAME OF BRANCH"
+
+On Github (https://github.com/ONSdigital/LUDA) you will see your local branch is now listed as part of the existing branches.
+Your commit message should be visible next to the file(s) you changed.
+
+
