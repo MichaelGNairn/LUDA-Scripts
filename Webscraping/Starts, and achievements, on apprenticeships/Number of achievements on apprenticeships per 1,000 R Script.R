@@ -24,7 +24,7 @@ Metric_short <- "ApprenticeshipCompletions"
 #### Import data from web ####
 
 # Set Working directory to place webscraped data files into
-setwd("D:/Coding_Repos/LUDA/Webscraping/Webscraped Inputs") # please note this path will be specific for your local drive
+setwd("D:/Coding_Repos/LUDA-Scripts/Webscraping/Webscraped Inputs") # please note this path will be specific for your local drive
 
 
 scraped_data <- "https://content.explore-education-statistics.service.gov.uk/api/releases/bd108e73-078e-4f0e-9faa-c1a0cb6b7135/files/a90cd3d0-6741-45ed-ac38-08d9d771ae37"
@@ -61,7 +61,7 @@ scraped_values <- filter(scraped_data, apprenticeships_or_further_education == "
 scraped_values['Category']=Mission 
 scraped_values['Indicator']=Metric
 scraped_values['Measure']="Number"
-scraped_values['Unit']="Number" # likely a % or £. Be careful.
+scraped_values['Unit']="Number" # likely a % or Â£. Be careful.
 
 
 # No confidence interval or observation status data
@@ -187,7 +187,7 @@ csv_output$Value[csv_output$Value == "Low"] <- "NA"
 
 # SET WORKING DIRECTORY!! 
 
-setwd("D:/Coding_Repos/LUDA") # please note this path will be specific for your local drive
+setwd("D:/Coding_Repos/LUDA-Scripts") # please note this path will be specific for your local drive
 
 output_folder <- "Output"
 
