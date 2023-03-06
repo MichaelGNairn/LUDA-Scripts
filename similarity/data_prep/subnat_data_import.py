@@ -6,8 +6,8 @@ def cut_single_metric(name):
     return subnat_explorer_metrics[subnat_explorer_metrics['Indicator']==name]
 
 def query_to_dataframe(query):
-    client = bigquery.Client(location=" europe-west2")
-    query_job = client.query(query, location="europe-west2",)  
+    client = bigquery.Client(location="location")
+    query_job = client.query(query, location="location",)  
     return(query_job.to_dataframe())
 
 def get_most_recent(data, year_syntax='YEAR'):
@@ -17,17 +17,17 @@ def get_most_recent(data, year_syntax='YEAR'):
 #Get data -- first from published subnat explorer.
 from google.cloud import bigquery
 import pandas as pd
-client = bigquery.Client(location=" europe-west2")
+client = bigquery.Client(location="location")
 
 query = """
     SELECT AREACD, Indicator, Value 
-    FROM `ons-luda-data-prod.ingest_luda.20220201_subnational_indicators_explorer_p` 
+    FROM `project.ingest_dataset_name.ingest_table_name` 
     
 """
 query_job = client.query(
     query,
     # Location must match that of the dataset(s) referenced in the query.
-    location="europe-west2",
+    location="location",
 )  # API request - starts the query
 
 subnat_explorer_metrics = query_job.to_dataframe()
@@ -35,7 +35,7 @@ subnat_explorer_metrics = query_job.to_dataframe()
 #PROCESS DATA TO GIVE A BUNCH OF SEPARATE DATAFRAMES TO PICK AND CHOOSE FROM.
 #Process data to do with Productivity
 gva = cut_single_metric("Gross Value Added per hour worked")
-query = """SELECT GEOGRAPHY, YEAR, HIGH_GROWTH_BUSINESSES as Value FROM `ons-luda-data-prod.ingest_luda.02_biz_high_growth`"""
+query = """SELECT GEOGRAPHY, YEAR, HIGH_GROWTH_BUSINESSES as Value FROM `project.ingest_dataset_name.growth_table_name`"""
 high_growth = query_to_dataframe(query)
 high_growth = get_most_recent(high_growth)
 high_growth['Indicator']='High growth businesses'
@@ -43,11 +43,11 @@ high_growth['Indicator']='High growth businesses'
 #Pay
 weekly_pay = cut_single_metric("Gross median weekly pay")
 
-query="""SELECT LAD_CODE, YEAR, GDI_PER_HEAD as Value FROM `ons-luda-data-prod.ingest_luda.48_gdi_per_capita`"""
+query="""SELECT LAD_CODE, YEAR, GDI_PER_HEAD as Value FROM `project.ingest_dataset_name.gdi_table_name`"""
 gdi = get_most_recent(query_to_dataframe(query))
 gdi['Indicator'] = 'GDI per head'
 
-query="""SELECT ONS_GEOGRAPHY_CODE_9_DIGIT, YEAR, PROPORTION_NEET_OR_NOT_KNOWN as Value FROM `ons-luda-data-prod.ingest_luda.46_neet`"""
+query="""SELECT ONS_GEOGRAPHY_CODE_9_DIGIT, YEAR, PROPORTION_NEET_OR_NOT_KNOWN as Value FROM `project.ingest_dataset_name.neet_table_name`"""
 neet = get_most_recent(query_to_dataframe(query))
 #For some reason, looks like this table has duplicated rows.
 neet = neet.drop_duplicates()
@@ -60,11 +60,11 @@ female_hle = cut_single_metric("Female healthy life expectancy")
 satisfaction = cut_single_metric("Average life satisfaction rating")
 
 #Think we've questioned this metric for rural areas...
-query="""SELECT LAD_CODE, AVERAGE_DISTANCE_TO_NEAREST_PARK_OR_PUBLIC_GARDEN_OR_PLAYING_FIELD_M as Value FROM `ons-luda-data-prod.ingest_luda.49-green_space`"""
+query="""SELECT LAD_CODE, AVERAGE_DISTANCE_TO_NEAREST_PARK_OR_PUBLIC_GARDEN_OR_PLAYING_FIELD_M as Value FROM `project.ingest_dataset_name.green_space_table_name`"""
 green_space = query_to_dataframe(query)
 green_space['Indicator'] = 'Avergae distance to park or public garden or playing field'
 
-query="""SELECT CODE, YEAR, ACTIVITY, RATE_PERCENTAGE as Value FROM `ons-luda-data-prod.ingest_luda.44_physical_activity`"""
+query="""SELECT CODE, YEAR, ACTIVITY, RATE_PERCENTAGE as Value FROM `project.ingest_dataset_name.physical_activity_table_name`"""
 activity = get_most_recent(query_to_dataframe(query))
 #Take inactive metric as proportion inactive
 inactive = activity[activity["ACTIVITY"]=="Inactive"]

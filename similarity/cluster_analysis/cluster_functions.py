@@ -27,12 +27,12 @@ def get_la_shapefile():
             import pip
             pip.main(['install', geopandas])
             import geopandas
-        client = bigquery.Client(location=" europe-west2")
+        client = bigquery.Client(location="location")
 
         query = """SELECT LAD20CD, geom, BNG_E, BNG_N
-        FROM `ons-luda-data-prod.ingest_geography.ltla_uk_2020_bqg_v1`
+        FROM `project.geography_ingest_dataset_name.geography_ingest_table_name`
         """
-        query_job = client.query(query, location="europe-west2",)
+        query_job = client.query(query, location="location",)
         global la_geo
         la_geo = query_job.to_geodataframe
         return(la_geo)
@@ -209,12 +209,12 @@ def get_best_clusters(metrics, model):
 def get_la_names_LAD20():
     if 'la_names' not in globals(): #If we haven't got this read in, read from bigquery.
         from google.cloud import bigquery
-        client = bigquery.Client(location=" europe-west2")
+        client = bigquery.Client(location="location")
 
         query = """SELECT LAD20CD, LAD20NM
-        FROM `ons-luda-data-prod.ingest_geography.ltla_uk_2020`
+        FROM `project.geography_ingest_dataset_name.local_authority_table_name`
         """
-        query_job = client.query(query, location="europe-west2",)
+        query_job = client.query(query, location="location",)
         la_names = query_job.to_dataframe()
         return(la_names)
     else: #If we already have, just return it.
@@ -223,12 +223,12 @@ def get_la_names_LAD20():
 def get_la_names():
     if 'la_names' not in globals(): #If we haven't got this read in, read from bigquery.
         from google.cloud import bigquery
-        client = bigquery.Client(location=" europe-west2")
+        client = bigquery.Client(location="location")
 
         query = """SELECT AREA_CODE, LOCAL_AREA_NAME
-        FROM `ons-luda-data-prod.ingest_luda.2021_based_LAP_geogs`
+        FROM `project.ingest_dataset_name.local_authority_lap_table_name`
         """
-        query_job = client.query(query, location="europe-west2",)
+        query_job = client.query(query, location="location",)
         la_names = query_job.to_dataframe()
         return(la_names)
     else: #If we already have, just return it.

@@ -6,8 +6,8 @@ def cut_single_metric(name):
     return subnat_explorer_metrics[subnat_explorer_metrics['Indicator']==name]
 
 def query_to_dataframe(query):
-    client = bigquery.Client(location=" europe-west2")
-    query_job = client.query(query, location="europe-west2",)  
+    client = bigquery.Client(location="location")
+    query_job = client.query(query, location="location",)  
     return(query_job.to_dataframe())
 
 def get_most_recent(data, year_syntax='YEAR'):
@@ -26,17 +26,17 @@ def reverse_anxiety(metric):
 #Get data -- first from published subnat explorer.
 from google.cloud import bigquery
 import pandas as pd
-client = bigquery.Client(location=" europe-west2")
+client = bigquery.Client(location="location")
 
 query = """
     SELECT AREACD, Indicator, Value 
-    FROM `ons-luda-data-prod.ess_aug_22.ess_dec_22` 
+    FROM `project.ingest_dataset_name.ingest_table_name` 
     
 """
 query_job = client.query(
     query,
     # Location must match that of the dataset(s) referenced in the query.
-    location="europe-west2",
+    location="location",
 )  # API request - starts the query
 
 subnat_explorer_metrics = query_job.to_dataframe()

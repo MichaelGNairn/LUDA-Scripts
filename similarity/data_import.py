@@ -11,8 +11,8 @@ def get_data_from_bq(sql):
 
 
 def save_dataframe_to_wip(df, table_name, schema=[], write_disposition="WRITE_TRUNCATE", 
-                          project="ons-luda-analysis-prod", WIP_dataset ="luda_wip_notebook"):
-    """ Simple function to save a dataframe to the LUDA WIP dataset
+                          project="project", WIP_dataset ="wip_dataset"):
+    """ Simple function to save a dataframe to the WIP dataset
     
     Wraps around the Google Cloud BigQuery Library 
     https://googleapis.dev/python/bigquery/latest/index.html
